@@ -3,10 +3,11 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const storage = localStorage.getItem('job');
-  console.log(storage); 
-  const [jobs, setJobs] = useState([]);
-  const [inputJob, setInputJob] = useState("");
+  // chuyen json trong local -> mang javascript 
+  // khhi moiws lay  ra hawn chi laf chuoi 
+  
+  const [jobs, setJobs] = useState(JSON.parse(localStorage.getItem('job')) ?? []);
+  const [inputJob, setInputJob] = useState("")
   console.log(inputJob);
 
   const handleClick = () => {
